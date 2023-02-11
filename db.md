@@ -33,12 +33,11 @@ Created symlink /etc/systemd/system/multi-user.target.wants/mariadb.service → 
 ```
 
 
-```sql
+```sh
 MariaDB [(none)]> CREATE USER 'api'@'10.107.1.12' IDENTIFIED BY 'toto';
 Query OK, 0 rows affected (0.011 sec)
 
-MariaDB [(none)]> CREATE DATABASE IF NOT EXISTS groupie CHARACTER SET utf8mb
-4 COLLA
+MariaDB [(none)]> CREATE DATABASE IF NOT EXISTS groupie CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 Query OK, 1 row affected (0.000 sec)
 
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON groupie.* TO 'api'@'10.107.1.12';
